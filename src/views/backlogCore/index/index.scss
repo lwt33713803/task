@@ -1,0 +1,164 @@
+.box-card {
+	height: 43vh;
+}
+
+.mb-1 {
+	margin-bottom: 1rem;
+}
+
+.h-55 {
+	height: 55vh !important;
+}
+
+.nav-list {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+._items {
+	width: 30%;
+	height: 9rem;
+	margin-bottom: 0.8rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border-radius: 8px;
+	cursor: pointer;
+
+	div {
+		width: 58px;
+		height: 58px;
+	}
+
+	.li0 {
+		background: url(../../../assets/image/dbzx01.png) no-repeat;
+		background-size: 100% 100%;
+	}
+
+	.li1 {
+		background: url(../../../assets/image/dbzx02.png) no-repeat;
+		background-size: 100% 100%;
+	}
+
+	.li2 {
+		background: url(../../../assets/image/dbzx03.png) no-repeat;
+		background-size: 100% 100%;
+	}
+
+	.li3 {
+		background: url(../../../assets/image/dbzx04.png) no-repeat;
+		background-size: 100% 100%;
+	}
+
+	.li4 {
+		background: url(../../../assets/image/dbzx05.png) no-repeat;
+		background-size: 100% 100%;
+	}
+
+	.li5 {
+		background: url(../../../assets/image/dbzx06.png) no-repeat;
+		background-size: 100% 100%;
+	}
+
+	.li6 {
+		background: url(../../../assets/image/dbzx07.png) no-repeat;
+		background-size: 100% 100%;
+	}
+
+	.li7 {
+		background: url(../../../assets/image/dbzx08.png) no-repeat;
+		background-size: 100% 100%;
+	}
+
+	.li8 {
+		background: url(../../../assets/image/dbzx09.png) no-repeat;
+		background-size: 100% 100%;
+	}
+
+	span {
+		font-size: 14px;
+		font-weight: 500;
+		margin-top: 0.4rem;
+	}
+}
+
+._items:hover {
+	box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.12);
+}
+
+.bg0 {
+	background: #f6fffe;
+}
+
+.bg1 {
+	background: #f3f8ff;
+}
+
+.bg2 {
+	background: #fffcf4;
+}
+
+.bg3 {
+	background: #f9f7ff;
+}
+
+.bg4 {
+	background: #fffbf8;
+}
+
+.bg5 {
+	background: #f8fbff;
+}
+
+.bg6 {
+	background: #fffbfa;
+}
+
+.bg7 {
+	background: #f9faff;
+}
+
+.bg8 {
+	background: #f9faff;
+}
+
+.bg9 {
+	background: #f5fff8;
+}
+
+.card-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: #1e2022;
+	font-size: 16px;
+
+	._more {
+		color: #377dff;
+		font-size: 14px;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+	}
+}
+
+.card-nav {
+	display: flex;
+	align-items: center;
+	li {
+		width: 150px;
+		cursor: pointer;
+		color: #666;
+	}
+	._active {
+		color: #377dff;
+		font-weight: 500;
+	}
+}
+
+.p-6 {
+	padding: 0 !important;
+}

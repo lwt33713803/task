@@ -1,0 +1,46 @@
+.crated-items {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	text-align: right;
+}
+
+._flex {
+	.el-form-item {
+		flex: 1;
+	}
+}
+
+.el-form-item {
+	display: flex;
+	align-items: center;
+}
+
+.crated-btn {
+	text-align: center;
+	margin: 1.5rem 0 0;
+}
+
+.crated-add {
+	margin-top: 1rem;
+	text-align: right;
+}
+
+.dis_center {
+	position: absolute;
+	bottom: 10%;
+	right: 42%;
+}
+
+:deep(.el-form-item--default) {
+	margin-bottom: 1rem !important;
+}
+:deep(.el-form-item__label) {
+	width: 150px !important;
+	margin-right: 0.5rem;
+}
+:deep(.el-input__inner) {
+	height: 30px;
+	font-size: 12px;
+}

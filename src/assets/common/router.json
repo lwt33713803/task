@@ -1,0 +1,1059 @@
+{
+	"code": "00000",
+	"data": [
+		{
+			"path": "/backlogCore",
+			"component": "Layout",
+			"redirect": "/backlogCore/backlogCoreManage",
+			"meta": {
+				"title": "待办任务",
+				"icon": "backlogCore",
+				"hidden": false,
+				"roles": [
+					"ADMIN"
+				],
+				"keepAlive": true
+			},
+			"children": [
+				{
+					"path": "backlogCoreManage",
+					"component": "/backlogCore/index",
+					"name": "backlogCore",
+					"meta": {
+						"title": "待办任务",
+						"icon": "backlogCore",
+						"hidden": false,
+						"roles": [
+							"ADMIN"
+						],
+						"keepAlive": true
+					}
+				}
+			]
+		},
+		{
+			"path": "/statistic",
+			"component": "Layout",
+			"redirect": "/statistic/statisticManage",
+			"meta": {
+				"title": "数据统计",
+				"icon": "statistic",
+				"hidden": false,
+				"roles": [
+					"ADMIN"
+				],
+				"keepAlive": true
+			},
+			"children": [
+				{
+					"path": "statisticManage",
+					"component": "/statistic/index",
+					"name": "statistic",
+					"meta": {
+						"title": "数据统计",
+						"icon": "statistic",
+						"hidden": false,
+						"roles": [
+							"ADMIN"
+						],
+						"keepAlive": true
+					}
+				}
+			]
+		},
+		{
+			"path": "/consumerManage",
+			"component": "Layout",
+			"redirect": "/consumerManage/userManage",
+			"meta": {
+				"title": "用户管理",
+				"icon": "consumerManage",
+				"hidden": false,
+				"roles": [
+					"ADMIN"
+				],
+				"keepAlive": true
+			},
+			"children": [
+				{
+					"path": "userManage",
+					"component": "/consumerManage/userManage",
+					"name": "userManage",
+					"meta": {
+						"title": "用户管理",
+						"icon": "userManage",
+						"hidden": false,
+						"roles": [
+							"ADMIN"
+						],
+						"keepAlive": true
+					},
+					"roleNodes": [
+						{
+							"nodes": "创建",
+							"nodesType": "btn",
+							"identification": "user:index:create"
+						},
+						{
+							"nodes": "打针",
+							"nodesType": "btn",
+							"identification": "user:index:inset"
+						},
+						{
+							"nodes": "追加策略组",
+							"nodesType": "btn",
+							"identification": "user:index:addTactics"
+						},
+						{
+							"nodes": "用户配置",
+							"nodesType": "btn",
+							"identification": "user:index:userConfig"
+						},
+						{
+							"nodes": "用户编辑",
+							"nodesType": "btn",
+							"identification": "user:index:userEdit"
+						},
+						{
+							"nodes": "帐变记录",
+							"nodesType": "btn",
+							"identification": "user:index:billInfo"
+						},
+						{
+							"nodes": "重置密码",
+							"nodesType": "btn",
+							"identification": "user:index:resetPw"
+						},
+						{
+							"nodes": "重置支付密码",
+							"nodesType": "btn",
+							"identification": "user:index:resetPayPw"
+						},
+						{
+							"nodes": "配置启用/停用",
+							"nodesType": "switch",
+							"identification": "user:index:configSw"
+						}
+					]
+				},
+				{
+					"path": "tacticsManage",
+					"component": "/consumerManage/tacticsManage",
+					"name": "tacticsManage",
+					"meta": {
+						"title": "策略管理",
+						"icon": "tacticsManage",
+						"hidden": false,
+						"roles": [
+							"ADMIN"
+						],
+						"keepAlive": true
+					},
+					"roleNodes": [
+						{
+							"nodes": "创建",
+							"nodesType": "btn",
+							"identification": "consumer:tactics:create"
+						},
+						{
+							"nodes": "编辑",
+							"nodesType": "btn",
+							"identification": "consumer:tactics:edit"
+						},
+						{
+							"nodes": "删除",
+							"nodesType": "btn",
+							"identification": "consumer:tactics:delete"
+						},
+						{
+							"nodes": "状态",
+							"nodesType": "switch",
+							"identification": "consumer:tactics:status"
+						},
+						{
+							"nodes": "是否共享",
+							"nodesType": "switch",
+							"identification": "consumer:tactics:isOpen"
+						},
+						{
+							"nodes": "批量删除",
+							"nodesType": "btn",
+							"identification": "consumer:tactics:batchDelete"
+						},
+						{
+							"nodes": "查看计划",
+							"nodesType": "btn",
+							"identification": "consumer:tactics:viewPlan"
+						},
+						{
+							"nodes": "查看关联",
+							"nodesType": "btn",
+							"identification": "consumer:tactics:viewUsers"
+						}
+					]
+				},
+				{
+					"path": "gradeManage",
+					"component": "/consumerManage/gradeManage",
+					"name": "gradeManage",
+					"meta": {
+						"title": "等级管理",
+						"icon": "gradeManage",
+						"hidden": false,
+						"roles": [
+							"ADMIN"
+						],
+						"keepAlive": true
+					},
+					"roleNodes": [
+						{
+							"nodes": "创建",
+							"nodesType": "btn",
+							"identification": "consumer:grade:create"
+						},
+						{
+							"nodes": "编辑",
+							"nodesType": "btn",
+							"identification": "consumer:grade:edit"
+						}
+					]
+				},
+				{
+					"path": "budgetRecord",
+					"component": "/consumerManage/budgetRecord",
+					"name": "budgetRecord",
+					"meta": {
+						"title": "充提记录",
+						"icon": "budgetRecord",
+						"hidden": false,
+						"roles": [
+							"ADMIN"
+						],
+						"keepAlive": true
+					},
+					"roleNodes": [
+						{
+							"nodes": "充值查询",
+							"nodesType": "search",
+							"identification": "consumer:budget:paySearch"
+						},
+						{
+							"nodes": "提现查询",
+							"nodesType": "search",
+							"identification": "consumer:budget:withdrawalSearch"
+						},
+						{
+							"nodes": "报表下载",
+							"nodesType": "btn",
+							"identification": "consumer:budget:excel"
+						}
+					]
+				},
+				{
+					"path": "billingDetails",
+					"component": "/consumerManage/billingDetails",
+					"name": "billingDetails",
+					"meta": {
+						"title": "帐变明细",
+						"icon": "billingDetails",
+						"hidden": false,
+						"roles": [
+							"ADMIN"
+						],
+						"keepAlive": true
+					}
+				}
+			]
+		},
+		{
+			"path": "/brushUnitCore",
+			"component": "Layout",
+			"redirect": "/brushUnitCore/goodsManage",
+			"meta": {
+				"title": "刷单中心",
+				"icon": "brushUnitCore",
+				"hidden": false,
+				"roles": [
+					"ADMIN"
+				],
+				"keepAlive": true
+			},
+			"children": [
+				{
+					"path": "goodsManage",
+					"component": "/brushUnitCore/goodsManage",
+					"name": "goodsManage",
+					"meta": {
+						"title": "商品管理",
+						"icon": "goodsManage",
+						"hidden": false,
+						"roles": [
+							"ADMIN"
+						],
+						"keepAlive": true
+					},
+					"roleNodes": [
+						{
+							"nodes": "创建",
+							"nodesType": "btn",
+							"identification": "goods:index:create"
+						},
+						{
+							"nodes": "编辑",
+							"nodesType": "btn",
+							"identification": "goods:index:edit"
+						},
+						{
+							"nodes": "导入",
+							"nodesType": "btn",
+							"identification": "goods:index:import"
+						},
+						{
+							"nodes": "删除",
+							"nodesType": "btn",
+							"identification": "goods:index:delete"
+						},
+						{
+							"nodes": "批量删除",
+							"nodesType": "btn",
+							"identification": "goods:index:batchDelete"
+						},
+						{
+							"nodes": "状态",
+							"nodesType": "switch",
+							"identification": "goods:index:status"
+						}
+					]
+				},
+				{
+					"path": "goodsClassifyManage",
+					"component": "/brushUnitCore/goodsClassifyManage",
+					"name": "goodsClassifyManage",
+					"meta": {
+						"title": "商品分类管理",
+						"icon": "goodsClassifyManage",
+						"hidden": false,
+						"roles": [
+							"ADMIN"
+						],
+						"keepAlive": true
+					},
+					"roleNodes": [
+						{
+							"nodes": "创建",
+							"nodesType": "btn",
+							"identification": "goods:goodsClass:create"
+						},
+						{
+							"nodes": "编辑",
+							"nodesType": "btn",
+							"identification": "goods:goodsClass:edit"
+						},
+						{
+							"nodes": "删除",
+							"nodesType": "btn",
+							"identification": "goods:goodsClass:delete"
+						},
+						{
+							"nodes": "批量删除",
+							"nodesType": "btn",
+							"identification": "goods:goodsClass:batchDelete"
+						},
+						{
+							"nodes": "状态",
+							"nodesType": "switch",
+							"identification": "goods:goodsClass:status"
+						}
+					]
+				},
+				{
+					"path": "orderFormManage",
+					"component": "/brushUnitCore/orderFormManage",
+					"name": "orderFormManage",
+					"meta": {
+						"title": "订单管理",
+						"icon": "orderFormManage",
+						"hidden": false,
+						"roles": [
+							"ADMIN"
+						],
+						"keepAlive": true
+					},
+					"roleNodes": [
+						{
+							"nodes": "解冻订单",
+							"nodesType": "btn",
+							"identification": "goods:order:thawOrder"
+						},
+						{
+							"nodes": "取消订单",
+							"nodesType": "btn",
+							"identification": "goods:order:cancelOrder"
+						}
+					]
+				}
+			]
+		},
+		{
+			"path": "/agencyCore",
+			"component": "Layout",
+			"redirect": "/agencyCore/agencyList",
+			"meta": {
+				"title": "代理管理",
+				"icon": "agencyCore",
+				"hidden": false,
+				"roles": [
+					"ADMIN"
+				],
+				"keepAlive": true
+			},
+			"children": [
+				{
+					"path": "agencyList",
+					"component": "/agencyCore/agencyList",
+					"name": "agencyList",
+					"meta": {
+						"title": "代理管理",
+						"icon": "agencyList",
+						"hidden": false,
+						"roles": [
+							"ADMIN"
+						],
+						"keepAlive": true
+					},
+					"roleNodes": [
+						{
+							"nodes": "代理组-创建",
+							"nodesType": "btn",
+							"identification": "agency:index:groupCreate"
+						},
+						{
+							"nodes": "代理组-编辑",
+							"nodesType": "btn",
+							"identification": "agency:index:groupEdit"
+						},
+						{
+							"nodes": "代理组-删除",
+							"nodesType": "btn",
+							"identification": "agency:index:groupDel"
+						},
+						{
+							"nodes": "代理-创建",
+							"nodesType": "btn",
+							"identification": "agency:index:create"
+						},
+						{
+							"nodes": "代理-编辑",
+							"nodesType": "btn",
+							"identification": "agency:index:edit"
+						},
+						{
+							"nodes": "代理-删除",
+							"nodesType": "btn",
+							"identification": "agency:index:delete"
+						},
+						{
+							"nodes": "状态",
+							"nodesType": "switch",
+							"identification": "agency:index:status"
+						},
+						{
+							"nodes": "重置密码",
+							"nodesType": "btn",
+							"identification": "agency:index:resetPw"
+						}
+					]
+				}
+			]
+		},
+		{
+			"path": "/marketingCore",
+			"component": "Layout",
+			"redirect": "/marketingCore/bigWheelManager",
+			"meta": {
+				"title": "营销中心",
+				"icon": "marketingCore",
+				"hidden": false,
+				"roles": [
+					"ADMIN"
+				],
+				"keepAlive": true
+			},
+			"children": [
+				{
+					"path": "bigWheelManager",
+					"component": "/marketingCore/bigWheelManager",
+					"name": "bigWheelManager",
+					"meta": {
+						"title": "大转盘",
+						"icon": "bigWheelManager",
+						"hidden": false,
+						"roles": [
+							"ADMIN"
+						],
+						"keepAlive": true
+					},
+					"roleNodes": [
+						{
+							"nodes": "规则维护",
+							"nodesType": "btn",
+							"identification": "marketing:bigWheel:rule"
+						},
+						{
+							"nodes": "奖励维护",
+							"nodesType": "btn",
+							"identification": "marketing:bigWheel:award"
+						}
+					]
+				},
+				{
+					"path": "bannerManage",
+					"component": "/marketingCore/bannerManage",
+					"name": "bannerManage",
+					"meta": {
+						"title": "Banner管理",
+						"icon": "bannerManage",
+						"hidden": false,
+						"roles": [
+							"ADMIN"
+						],
+						"keepAlive": true
+					},
+					"roleNodes": [
+						{
+							"nodes": "创建",
+							"nodesType": "btn",
+							"identification": "marketing:banner:create"
+						},
+						{
+							"nodes": "编辑",
+							"nodesType": "btn",
+							"identification": "marketing:banner:edit"
+						},
+						{
+							"nodes": "删除",
+							"nodesType": "btn",
+							"identification": "marketing:banner:delete"
+						},
+						{
+							"nodes": "批量删除",
+							"nodesType": "btn",
+							"identification": "marketing:banner:batchDelete"
+						}
+					]
+				},
+				{
+					"path": "messagesManager",
+					"component": "/marketingCore/messagesManager",
+					"name": "messagesManager",
+					"meta": {
+						"title": "客服管理",
+						"icon": "messagesManager",
+						"hidden": false,
+						"roles": [
+							"ADMIN"
+						],
+						"keepAlive": true
+					},
+					"roleNodes": [
+						{
+							"nodes": "创建",
+							"nodesType": "btn",
+							"identification": "marketing:messages:create"
+						},
+						{
+							"nodes": "编辑",
+							"nodesType": "btn",
+							"identification": "marketing:messages:edit"
+						},
+						{
+							"nodes": "删除",
+							"nodesType": "btn",
+							"identification": "marketing:messages:delete"
+						},
+						{
+							"nodes": "批量删除",
+							"nodesType": "btn",
+							"identification": "marketing:messages:batchDelete"
+						},
+						{
+							"nodes": "状态",
+							"nodesType": "switch",
+							"identification": "marketing:messages:status"
+						}
+					]
+				},
+				{
+					"path": "shareManage",
+					"component": "/marketingCore/shareManage",
+					"name": "shareManage",
+					"meta": {
+						"title": "分享(拉新)管理",
+						"icon": "shareManage",
+						"hidden": false,
+						"roles": [
+							"ADMIN"
+						],
+						"keepAlive": true
+					},
+					"roleNodes": [
+						{
+							"nodes": "分享规则",
+							"nodesType": "btn",
+							"identification": "marketing:share:shareRule"
+						},
+						{
+							"nodes": "详情查看",
+							"nodesType": "btn",
+							"identification": "marketing:share:viewDesc"
+						}
+					]
+				}
+			]
+		},
+		{
+			"path": "/approval",
+			"component": "Layout",
+			"redirect": "/approval/approvalManage",
+			"meta": {
+				"title": "审批管理",
+				"icon": "approval",
+				"hidden": false,
+				"roles": [
+					"ADMIN"
+				],
+				"keepAlive": true
+			},
+			"children": [
+				{
+					"path": "approvalManage",
+					"component": "/approval/approvalManage",
+					"name": "approvalManage",
+					"meta": {
+						"title": "审批管理",
+						"icon": "approvalManage",
+						"hidden": false,
+						"roles": [
+							"ADMIN"
+						],
+						"keepAlive": true
+					},
+					"roleNodes": [
+						{
+							"nodes": "审批",
+							"nodesType": "btn",
+							"identification": "approval:index:approval"
+						}
+					]
+				},
+				{
+					"path": "approvalsManage",
+					"component": "/approval/approvalsManage",
+					"name": "approvalsManage",
+					"meta": {
+						"title": "审批流管理",
+						"icon": "approvalsManage",
+						"hidden": false,
+						"roles": [
+							"ADMIN"
+						],
+						"keepAlive": true
+					},
+					"roleNodes": [
+						{
+							"nodes": "创建",
+							"nodesType": "btn",
+							"identification": "approval:approvals:create"
+						},
+						{
+							"nodes": "编辑",
+							"nodesType": "btn",
+							"identification": "approval:approvals:edit"
+						},
+						{
+							"nodes": "删除",
+							"nodesType": "btn",
+							"identification": "approval:approvals:delete"
+						},
+						{
+							"nodes": "批量删除",
+							"nodesType": "btn",
+							"identification": "approval:approvals:batchDelete"
+						},
+						{
+							"nodes": "状态",
+							"nodesType": "switch",
+							"identification": "approval:approvals:status"
+						}
+					]
+				}
+			]
+		},
+		{
+			"path": "/moneyCore",
+			"component": "Layout",
+			"redirect": "/moneyCore/productManage",
+			"meta": {
+				"title": "理财管理",
+				"icon": "moneyCore",
+				"hidden": true,
+				"roles": [
+					"ADMIN"
+				],
+				"keepAlive": true
+			},
+			"children": [
+				{
+					"path": "productManage",
+					"component": "/moneyCore/productManage",
+					"name": "productManage",
+					"meta": {
+						"title": "产品管理",
+						"icon": "productManage",
+						"hidden": true,
+						"roles": [
+							"ADMIN"
+						],
+						"keepAlive": true
+					}
+				},
+				{
+					"path": "moneyOrderManage",
+					"component": "/moneyCore/moneyOrderManage",
+					"name": "moneyOrderManage",
+					"meta": {
+						"title": "订单管理",
+						"icon": "moneyOrderManage",
+						"hidden": true,
+						"roles": [
+							"ADMIN"
+						],
+						"keepAlive": true
+					}
+				}
+			]
+		},
+		{
+			"path": "/system",
+			"component": "Layout",
+			"redirect": "/system/systemConfig",
+			"meta": {
+				"title": "系统配置",
+				"icon": "system",
+				"hidden": false,
+				"roles": [
+					"ADMIN"
+				],
+				"keepAlive": true
+			},
+			"children": [
+				{
+					"path": "systemConfig",
+					"component": "/system/systemConfig",
+					"name": "systemConfig",
+					"meta": {
+						"title": "系统配置",
+						"icon": "systemConfig",
+						"hidden": false,
+						"roles": [
+							"ADMIN"
+						],
+						"keepAlive": true
+					},
+					"roleNodes": [
+						{
+							"nodes": "基本配置-保存",
+							"nodesType": "btn",
+							"identification": "system:index:basicSub"
+						},
+						{
+							"nodes": "默认配置-保存",
+							"nodesType": "btn",
+							"identification": "system:index:defaultSub"
+						},
+						{
+							"nodes": "充值配置-保存",
+							"nodesType": "btn",
+							"identification": "system:index:systemSub"
+						},
+						{
+							"nodes": "提现配置-保存",
+							"nodesType": "btn",
+							"identification": "system:index:withdrawalSub"
+						},
+						{
+							"nodes": "功能配置-保存",
+							"nodesType": "btn",
+							"identification": "system:index:featureSub"
+						}
+					]
+				},
+				{
+					"path": "userDeuceManage",
+					"component": "/system/userDeuceManage",
+					"name": "userDeuceManage",
+					"meta": {
+						"title": "分润管理",
+						"icon": "userDeuceManage",
+						"hidden": false,
+						"roles": [
+							"ADMIN"
+						],
+						"keepAlive": true
+					},
+					"roleNodes": [
+						{
+							"nodes": "编辑",
+							"nodesType": "btn",
+							"identification": "system:shareProfit:edit"
+						}
+					]
+				},
+				{
+					"path": "adminManage",
+					"component": "/system/adminManage",
+					"name": "adminManage",
+					"meta": {
+						"title": "管理员管理",
+						"icon": "adminManage",
+						"hidden": false,
+						"roles": [
+							"ADMIN"
+						],
+						"keepAlive": true
+					},
+					"roleNodes": [
+						{
+							"nodes": "创建",
+							"nodesType": "btn",
+							"identification": "system:admin:create"
+						},
+						{
+							"nodes": "编辑",
+							"nodesType": "btn",
+							"identification": "system:admin:edit"
+						},
+						{
+							"nodes": "删除",
+							"nodesType": "btn",
+							"identification": "system:admin:delete"
+						},
+						{
+							"nodes": "批量删除",
+							"nodesType": "btn",
+							"identification": "system:admin:batchDelete"
+						},
+						{
+							"nodes": "重置密码",
+							"nodesType": "btn",
+							"identification": "system:admin:resetPw"
+						},
+						{
+							"nodes": "状态",
+							"nodesType": "switch",
+							"identification": "system:admin:status"
+						}
+					]
+				},
+				{
+					"path": "roleManage",
+					"component": "/system/roleManage",
+					"name": "roleManage",
+					"meta": {
+						"title": "角色管理",
+						"icon": "roleManage",
+						"hidden": false,
+						"roles": [
+							"ADMIN"
+						],
+						"keepAlive": true
+					},
+					"roleNodes": [
+						{
+							"nodes": "创建",
+							"nodesType": "btn",
+							"identification": "system:role:create"
+						},
+						{
+							"nodes": "授权",
+							"nodesType": "btn",
+							"identification": "system:role:accredit"
+						},
+						{
+							"nodes": "删除",
+							"nodesType": "btn",
+							"identification": "system:role:delete"
+						},
+						{
+							"nodes": "状态",
+							"nodesType": "switch",
+							"identification": "system:role:status"
+						}
+					]
+				},
+				{
+					"path": "messageNotice",
+					"component": "/system/messageNotice",
+					"name": "messageNotice",
+					"meta": {
+						"title": "站内信",
+						"icon": "messageNotice",
+						"hidden": false,
+						"roles": [
+							"ADMIN"
+						],
+						"keepAlive": true
+					},
+					"roleNodes": [
+						{
+							"nodes": "创建",
+							"nodesType": "btn",
+							"identification": "system:messageNotice:create"
+						},
+						{
+							"nodes": "编辑",
+							"nodesType": "btn",
+							"identification": "system:messageNotice:edit"
+						},
+						{
+							"nodes": "删除",
+							"nodesType": "btn",
+							"identification": "system:messageNotice:delete"
+						},
+						{
+							"nodes": "批量删除",
+							"nodesType": "btn",
+							"identification": "system:messageNotice:batchDelete"
+						},
+						{
+							"nodes": "状态",
+							"nodesType": "switch",
+							"identification": "system:messageNotice:status"
+						}
+					]
+				},
+				{
+					"path": "articleManage",
+					"component": "/system/articleManage",
+					"name": "articleManage",
+					"meta": {
+						"title": "文章管理",
+						"icon": "articleManage",
+						"hidden": false,
+						"roles": [
+							"ADMIN"
+						],
+						"keepAlive": true
+					},
+					"roleNodes": [
+						{
+							"nodes": "创建",
+							"nodesType": "btn",
+							"identification": "system:article:create"
+						},
+						{
+							"nodes": "编辑",
+							"nodesType": "btn",
+							"identification": "system:article:edit"
+						},
+						{
+							"nodes": "删除",
+							"nodesType": "btn",
+							"identification": "system:article:delete"
+						},
+						{
+							"nodes": "批量删除",
+							"nodesType": "btn",
+							"identification": "system:article:batchDelete"
+						}
+					]
+				},
+				{
+					"path": "dictManage",
+					"component": "/system/dictManage",
+					"name": "dictManage",
+					"meta": {
+						"title": "字典管理",
+						"icon": "dictManage",
+						"hidden": false,
+						"roles": [
+							"ADMIN"
+						],
+						"keepAlive": true
+					}
+				},
+				{
+					"path": "countryManage",
+					"component": "/system/countryManage",
+					"name": "countryManage",
+					"meta": {
+						"title": "国家管理",
+						"icon": "countryManage",
+						"hidden": false,
+						"roles": [
+							"ADMIN"
+						],
+						"keepAlive": true
+					},
+					"roleNodes": [
+						{
+							"nodes": "状态",
+							"nodesType": "switch",
+							"identification": "system:country:status"
+						},
+						{
+							"nodes": "是否默认",
+							"nodesType": "switch",
+							"identification": "system:country:isDefault"
+						}
+					]
+				},
+				{
+					"path": "logConfig",
+					"component": "/system/logConfig",
+					"name": "logConfig",
+					"meta": {
+						"title": "日志管理",
+						"icon": "logConfig",
+						"hidden": false,
+						"roles": [
+							"ADMIN"
+						],
+						"keepAlive": true
+					}
+				},
+				{
+					"path": "pageManager",
+					"component": "/system/pageManager",
+					"name": "pageManager",
+					"meta": {
+						"title": "单页管理",
+						"icon": "pageManager",
+						"hidden": false,
+						"roles": [
+							"ADMIN"
+						],
+						"keepAlive": true
+					},
+					"roleNodes": [
+						{
+							"nodes": "创建",
+							"nodesType": "btn",
+							"identification": "system:page:create"
+						},
+						{
+							"nodes": "编辑",
+							"nodesType": "btn",
+							"identification": "system:page:edit"
+						},
+						{
+							"nodes": "删除",
+							"nodesType": "btn",
+							"identification": "system:page:delete"
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,21 @@
+.crated-form {
+	padding: 0 4rem;
+	box-sizing: border-box;
+}
+
+.el-form-item {
+	display: flex;
+	align-items: center;
+	margin-bottom: 1.5rem;
+}
+
+:deep(.el-form-item__content) {
+	width: 70%;
+}
+
+:deep(.el-form-item__label) {
+	text-align: right;
+	margin-bottom: 0 !important;
+	margin-right: 1rem;
+	width: 10%;
+}

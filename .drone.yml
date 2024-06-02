@@ -1,0 +1,34 @@
+kind: pipeline
+name: default
+
+steps:
+  - name: frontend
+    image: node:16.18.1
+    commands:
+      - npm i -g pnpm
+      - pnpm install
+      - pnpm run build:dev
+  - name: docker
+    image: plugins/docker
+    settings:
+      repo: registry.dev.hr-dj.com/project/cts-adm-v1-0-0
+      registry: registry.dev.hr-dj.com
+      insecure: true
+      force_tag: true
+      tags: latest
+  - name: deploy
+    image: appleboy/drone-ssh
+    settings:
+      host:
+        from_secret: DEPLOY_HOST
+      username:
+        from_secret: DEPLOY_USER
+      password:
+        from_secret: DEPLOY_PASSWORD
+      port:
+        from_secret: DEPLOY_PORT
+      script:
+        - docker service update --image registry.dev.hr-dj.com/project/cts-adm-v1-0-0:latest cts-pc-admin-v100_web-server
+trigger:
+  branch:
+  - versions/v1.0.0

@@ -1,0 +1,33 @@
+// 全局SCSS变量
+
+:root {
+  --menuBg: rgba(255,255,255,1);
+  --menuText: rgba(0,0,0,1);
+  --menuActiveText: rgba(55,125,255,1);
+  --menuHover: rgba(242,244,246,1);
+  --subMenuBg: rgba(255,255,255,1);
+  --subMenuActiveText: rgba(0,0,0,1);
+  --subMenuHover: rgba(242,244,246,1);
+
+  //重写 
+  --el-menu-item-height:45px;
+  --el-bg-color-page:rgba(255,255,255,1);
+  --el-color-primary:rgba(55,125,255,1);
+	--el-disabled-text-color:rgba(189,197,209,1);
+	--el-disabled-border-color:transparent;
+	--el-disabled-bg-color:rgba(231,234,243,0.7);
+	--el-text-color-placeholder:rgba(189,197,209,1);
+	--el-component-size:42px;
+}
+
+
+$menuBg: var(--menuBg);
+$menuText: var(--menuText);
+$menuActiveText: var(--menuActiveText);
+$menuHover: var(--menuHover);
+
+$subMenuBg: var(--subMenuBg);
+$subMenuActiveText: var(--subMenuActiveText);
+$subMenuHover: var(--subMenuHover);
+
+$sideBarWidth: 260px;

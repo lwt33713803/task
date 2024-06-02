@@ -1,0 +1,134 @@
+.m-user {
+	display: flex;
+	flex-direction: row;
+	height: calc(100vh - 65px);
+}
+.m-user-table {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	position: relative;
+	width: calc(100% - 230px);
+	.header {
+		display: flex;
+		padding: 16px 16px 0px 16px;
+		margin-bottom: 16px;
+		border-radius: 4px;
+		background: white;
+		box-shadow: 0 0 12px rgb(0 0 0 / 5%);
+	}
+	.footer {
+		flex: 1;
+		display: flex;
+		padding: 16px;
+		flex-direction: column;
+		border-radius: 4px;
+		overflow: hidden;
+		background: white;
+		box-shadow: 0 0 12px rgb(0 0 0 / 5%);
+		position: relative;
+		box-sizing: border-box;
+		.util {
+			margin-bottom: 15px;
+			display: flex;
+			justify-content: flex-end;
+			flex-shrink: 0;
+		}
+		.table-inner {
+			flex: 1;
+			position: relative;
+			overflow: auto;
+		}
+		.table {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
+	.pagination {
+		width: 100%;
+		display: flex;
+		justify-content: flex-end;
+		padding-top: 20px;
+		box-sizing: border-box;
+		flex-shrink: 0;
+	}
+}
+.node-wrap {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	padding: 0.5rem 1rem;
+	color: #8c98a4;
+	cursor: pointer;
+	.node-left {
+		flex: 1;
+	}
+	.node-right {
+		flex: 1;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		.node-btn {
+			display: flex;
+			align-items: center;
+		}
+		.node-btn span:hover {
+			color: #2467e5;
+		}
+	}
+}
+
+.m-dept-side {
+	box-sizing: border-box;
+	width: 300px;
+	height: 100%;
+	margin-right: 10px;
+	flex-shrink: 0;
+	position: relative;
+	:deep(.el-card__body) {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+		padding: 0 !important;
+	}
+	.scrollbar {
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+	}
+	.filter-tree {
+		flex: 1;
+		overflow: hidden;
+		position: relative;
+		padding-top: 20px;
+		box-sizing: border-box;
+		font-size: 14px;
+	}
+}
+._hint {
+	font-size: 0.5rem;
+	color: #999;
+	display: block;
+}
+:deep(.el-tree-node__expand-icon) {
+	display: none !important;
+}
+
+:deep(.el-form-item) {
+	align-items: center;
+}
+
+.active {
+	color: #1e2022;
+	background-color: #d9ecff;
+}
+
+.create {
+	margin: 1.5rem auto 0.5rem;
+	width: 50%;
+}
