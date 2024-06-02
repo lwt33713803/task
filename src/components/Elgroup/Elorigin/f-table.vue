@@ -1,4 +1,6 @@
+
 <script lang="ts" setup>
+
 import { PropType } from 'vue';
 import usePageDefault from '@/hooks/usePageDefault'
 import useOriginContorller from '@/hooks/useOriginContorller'
@@ -40,7 +42,7 @@ const props = defineProps({
   refreshLoader: {
     type: Object as PropType<[NumberOrUndefined, NumberOrUndefined]>,
     required: false,
-    default: () => { }
+    default: () => []
   },
   smartFilter: {
     type: [Object, Array, String, Number, Boolean],
@@ -51,7 +53,7 @@ const props = defineProps({
   layout: {
     type: Object as PropType<LayoutString>,
     required: false,
-    default: () => { 'prev, pager, next,jumper' }
+    default: 'prev, pager, next,jumper'
   },
   //分页器分段数组
   pageSizes: {
@@ -283,26 +285,31 @@ defineExpose({ refreshTrigger })
 <template>
   <div>
     <!-- 分页器 -->
-
     <div>
       <slot v-bind="SlotAttrsLoader" name="header-action-append"></slot>
     </div>
   </div>
-  <div class="page-body">
+  <div class="page-body flex flex-col">
+
     <div v-if="filterSchemes" class="my-5 fms-card p-3">
       <div class="flex flex-wrap justify-start items-center">
-        <ElTableSearchGroup v-for="(itemFilterParams, index) in filterSchemes" :key="index" ref="searchGroup"
-          class="my-2 " :config="itemFilterParams" @change="doItemFilterParams">
+        <ElTableSearchGroup 
+          v-for="(itemFilterParams, index) in filterSchemes" 
+          ref="searchGroup"
+          :key="index" 
+          :config="itemFilterParams" 
+          class="my-2 "
+          @change="doItemFilterParams"
+        >
         </ElTableSearchGroup>
         <el-button type="primary" @click="refreshTrigger">查询</el-button>
         <el-button @click="refreshTriggerAllParams">重置</el-button>
         <slot v-bind="SlotAttrsLoader" name="header-action-append-search">
-
         </slot>
       </div>
-
     </div>
-    <div :body-style="CardStyle" class="table-card">
+
+    <div :body-style="CardStyle" class="table-card flex-grow-1">
       <div v-if="viewControl != 'small'" class="p-6">
         <div class=" flex justify-between items-center">
           <div>
@@ -311,22 +318,36 @@ defineExpose({ refreshTrigger })
           </div>
           <div>
             <div v-show="props.isShowDefaultBtn">
-              <el-button :icon="Refresh" @click="() => {
-                props.serachType == 'all' ? refreshTriggerAllParams() : refreshFilterTrigger(true)
-              }">
+              <el-button
+                :icon="Refresh"
+                @click="() => {
+                  props.serachType == 'all' ? refreshTriggerAllParams() : refreshFilterTrigger(true)
+                }" 
+              >
                 刷新
               </el-button>
             </div>
           </div>
         </div>
       </div>
-      <el-table v-loading="!dataMatchCursor" row-key="id" default-expand-all element-loading-text="正在加载数据中..."
-        :element-loading-svg="svg" class="custom-loading-svg" element-loading-svg-view-box="-10, -10, 50, 50"
+      <el-table 
+        v-loading="!dataMatchCursor" 
+        row-key="id" 
+        default-expand-all 
+        element-loading-text="正在加载数据中..."
+        :element-loading-svg="svg" 
+        class="custom-loading-svg" 
+        element-loading-svg-view-box="-10, -10, 50, 50"
+        header-cell-class-name="!py-4 text-[#333333] font-[500]"
         :row-style="{
           color: '#1e2022',
           fontSize: '14px',
-        }" v-bind="{ ...$attrs, ...TableConfig }" header-cell-class-name="!py-4 text-[#333333] font-[500] "
-        :data="loaderList(recordBoxList)" :height="props.height" @selection-change="selectTableChange">
+        }" 
+        :data="loaderList(recordBoxList)" 
+        :height="props.height"
+        v-bind="{ ...$attrs, ...TableConfig }"
+        @selection-change="selectTableChange"  
+        >
         <slot v-bind="SlotAttrsLoader">
 
         </slot>
@@ -336,40 +357,36 @@ defineExpose({ refreshTrigger })
         <div class="ml-3">
           <el-pagination 
             v-model:current-page="elPageIndex" 
-            v-model:page-size="elPageSize" 
-            background
-            :hide-on-single-page="false" 
+            v-model:page-size="elPageSize"
+            background :hide-on-single-page="false" 
             :page-sizes="pageSizes" 
-            :default-page-size="elPageSize" 
-            layout="sizes,slot"
-            :total="pageItemTotal" 
-            class="my-6 float-right ml-1">
+            :default-page-size="elPageSize"
+            layout="sizes,slot" 
+            :total="pageItemTotal"
+            class="my-6 float-right ml-1"
+            >
             <div class="text-[#667788] ml-2">
               共 {{ pageItemTotal === 0 ? recordBoxList.length : pageItemTotal }} 条记录
             </div>
           </el-pagination>
         </div>
 
-        <el-pagination 
-          v-model:current-page="elPageIndex" 
-          v-model:page-size="elPageSize"
+        <el-pagination
+           v-model:current-page="elPageIndex" 
+           v-model:page-size="elPageSize"
           background 
           :hide-on-single-page="false" 
           :page-sizes="pageSizes" 
-          :default-page-size="elPageSize"
-          :layout="layout" 
+          :default-page-size="elPageSize" 
+          :layout="layout"
           :total="pageItemTotal" 
           class="my-6 float-right mr-6"
           />
       </div>
     </div>
-
   </div>
 </template>
 <style scoped>
-.row-class {
-  color: red;
-}
 
 .fms-card {
   background: rgba(140, 152, 164, 0.05);

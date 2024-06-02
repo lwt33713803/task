@@ -1,3 +1,4 @@
+
 <script setup lang="ts">
 import blockLable from "@/components/block/Label.vue";
 import { searchTypesPage } from "@/api/system/notice";
@@ -31,12 +32,9 @@ const { selectedItems, handleSelectionChange } = useTableSelection(filterId);
 </script>
 
 <template>
-  <f-table 
-    ref="pageOrigin" 
-    :system-recordloader="search-types-page"
-    :smart-filter="[{ title: '字典名称', scheme: 'dict_name', type: 'input' }]">
-    <template
-      #header-action-append-button-gourp="{
+  <f-table ref="pageOrigin" :systemRecordloader="searchTypesPage"
+    :smartFilter="[{ title: '字典名称', scheme: 'dict_name', type: 'input' }]">
+    <template #header-action-append-button-gourp="{
       refreshTrigger,
       refreshTriggerAllParams,
     }">
